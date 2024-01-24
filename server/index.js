@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import { postApiNote } from './controllers/note.js';
+import { deleteApiNote, getApiNote, getApiNoteById, postApiNote, putApiNote } from './controllers/note.js';
 dotenv.config();
 
 const app = express();
@@ -17,6 +17,14 @@ const connectDB = async ()=>{
 connectDB();
 
 app.post('/api/note', postApiNote );
+
+app.get('/api/notes', getApiNote);
+
+app.get('/api/note/:id', getApiNoteById);
+
+app.put('/api/note/:id', putApiNote);
+
+app.delete('/api/note/:id', deleteApiNote)
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () =>{
