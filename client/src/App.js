@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import './App.css';
-
 function App() {
   const [user, setUser] = useState({});
   const [title, setTitle] = useState('');
@@ -21,8 +20,11 @@ function App() {
   }
 
   return (
-    <div className='main-container text-center'>
-        <div className='addnote-container'>
+   <>
+   <h1 className='text-center'>NoteWave</h1>
+    <div className='main-container text-center '>
+
+        <div className='addnote-container mt-5'>
       <form>
       <h2 className='text-center'> Add Note</h2>
       <div>
@@ -58,14 +60,14 @@ function App() {
       </div>
 
       <div>
-        <button  type="button" onClick={addNote}>
+        <button  type="button" className='mt-4' onClick={addNote}>
           Add Task To Note
         </button>
       </div>
       </form>
     </div>
 
-    <div className='savenote-container'>
+    <div className='savenote-container mt-5'>
       <form>
         <h2>All Notes</h2>
       </form>
@@ -73,6 +75,8 @@ function App() {
     </div>
 
     </div>
+
+    </>
 
   );
 }
