@@ -1,4 +1,10 @@
 .main-container{
+  /* display: flex; */
+  /* justify-content: space-around; */
+  background-color: burlywood;
+}
+
+.container{
   display: flex;
   justify-content: space-around;
 }

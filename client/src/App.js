@@ -16,19 +16,20 @@ function App() {
       description: description,
       priority: priority
     })
-    alert(response?.data?.message)  
+    alert(response?.data?.message);
+
   }
 
   return (
    <>
-   <h1 className='text-center'>NoteWave</h1>
-    <div className='main-container text-center '>
-
-        <div className='addnote-container mt-5'>
+    <div className='main-container  '>
+    <h1 className='text-center '>NoteWave</h1>
+    <div className='container'>
+    <div className='addnote-container mt-5'>
       <form>
       <h2 className='text-center'> Add Note</h2>
       <div>
-        <label>Title : </label>
+        <label className='fs-5 mt-4'>Title : </label>
         <input type="string" className='form-control'
         placeholder='Enter title here ...'
         value={title}
@@ -38,7 +39,7 @@ function App() {
         />
       </div>
       <div>
-        <label>Description : </label> 
+        <label className='fs-5 mt-4'>Description : </label> 
         <input type="string" className='form-control'
         placeholder='Enter the description ...'
         value={description}
@@ -49,7 +50,7 @@ function App() {
       </div>
 
       <div>
-        <label>Priority : </label>
+        <label className='fs-5 mt-4'>Priority : </label>
         <input type ="string" className='form-control'
         placeholder='Enter priority here...'
         value={priority}
@@ -59,7 +60,7 @@ function App() {
         />
       </div>
 
-      <div>
+      <div className='text-center'>
         <button  type="button" className='mt-4' onClick={addNote}>
           Add Task To Note
         </button>
@@ -74,6 +75,10 @@ function App() {
 
     </div>
 
+
+    </div>
+
+       
     </div>
 
     </>
