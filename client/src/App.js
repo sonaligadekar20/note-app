@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import './App.css';
-function App() {
-  const [user, setUser] = useState({});
+const App =()=>{
+  const [notes, setNotes] = useState([]);
+  const [user, setUser] = useState(0);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState('');
@@ -17,8 +18,17 @@ function App() {
       priority: priority
     })
     alert(response?.data?.message);
-
   }
+
+  const loadTasks = async ()=>{
+    const response = await axios.get("/api/notes");
+
+    setNotes(response?.data?.data)
+  }
+
+  useEffect(()=>{
+    loadTasks();
+  },[])
 
   return (
    <>
